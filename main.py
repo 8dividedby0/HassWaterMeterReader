@@ -12,21 +12,21 @@ from cameraMath import M
 with open('config.json', 'r') as f:
     config = json.load(f)
 
-poolingRate = config["PoolingRate"]
-debug = config["Debug"]
+poolingRate = config["poolingRate"]
+debug = config["debug"]
 
-cameraURL = config["Camera"]["url"]
-contrast = config["Camera"]["Contrast"]
-brightness = config["Camera"]["Brightness"]
+cameraURL = config["camera"]["url"]
+contrast = config["camera"]["bontrast"]
+brightness = config["camera"]["brightness"]
 
 mqttBroker = config["MQTT"]["broker"]
 mqttPort = config["MQTT"]["port"]
 mqttTopic = config["MQTT"]["topic"]
 
-digit1CropX = config["digits"]["Digit1CropX"]
-digit1CropY = config["digits"]["Digit1CropY"]
-digit2CropX = config["digits"]["Digit2CropX"]
-digit2CropY = config["digits"]["Digit2CropY"]
+digit1CropX = config["digits"]["digit1CropX"]
+digit1CropY = config["digits"]["digit1CropY"]
+digit2CropX = config["digits"]["digit2CropX"]
+digit2CropY = config["digits"]["digit2CropY"]
 
 # setup the camera stream
 cap = cv2.VideoCapture(cameraURL) # camera stream URL
