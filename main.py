@@ -42,6 +42,7 @@ last_read = None # initialize the last read variable to None
 while True:
     ret, frame = cap.read() # read a frame from the video stream
     if not ret:
+        print("Ret is false! Exiting...")
         break
     
     if poolingRate != 0: # if pooling rate is set, check if enough time has passed since the last frame
