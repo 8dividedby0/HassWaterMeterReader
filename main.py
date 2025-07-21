@@ -16,7 +16,7 @@ poolingRate = config["poolingRate"]
 debug = config["debug"]
 
 cameraURL = config["camera"]["url"]
-contrast = config["camera"]["bontrast"]
+contrast = config["camera"]["contrast"]
 brightness = config["camera"]["brightness"]
 
 mqttBroker = config["MQTT"]["broker"]
