@@ -3,10 +3,10 @@ import numpy as np
 
 # calculates the perspective transform matrix
 src_pts = np.array([
-    [280, 150],   # top-left
-    [582, 150],   # top-right
-    [695, 898],   # bottom-right
-    [385, 904]    # bottom-left
+    [261, 140],   # top-left
+    [563, 137],   # top-right
+    [676, 887],   # bottom-right
+    [366, 893]    # bottom-left
 ], dtype=np.float32)
 
 """ original unmodified source points

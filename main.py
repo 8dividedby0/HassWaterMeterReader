@@ -34,6 +34,11 @@ cap = cv2.VideoCapture(cameraURL) # camera stream URL
 # setup the MQTT client
 client = mqtt.Client()
 client.connect(mqttBroker, mqttPort, 60)
+try:
+    client.loop_start() # without this, the client will not send messages after a while
+except Exception as e:
+    print(f"Error starting MQTT client loop: {e}")
+    exit(1)
 
 # setup runtime variables
 last_time = time.time() # initialize the last time variable to the current time
@@ -43,7 +48,7 @@ while True:
     ret, frame = cap.read() # read a frame from the video stream
     if not ret:
         print("Ret is false! Exiting...")
-        break
+        exit(1) # if the frame is not read correctly, exit the program
     
     if poolingRate != 0: # if pooling rate is set, check if enough time has passed since the last frame
         if not time.time() - last_time >= poolingRate: # check if enough time has passed
@@ -102,9 +107,7 @@ while True:
 
     finalNumber = float(f"{digit1}.{digit2}")
 
-    if debug: 
-        print(f"Final number: {finalNumber}") # print the final number to the console for debugging
-
     if finalNumber != last_read: # check if the number is different from the last read number, if so we publish it
+        print(f"Transmitting number: {finalNumber}")
         last_read = finalNumber
         client.publish(mqttTopic, finalNumber)  # publish the final number to the MQTT topic

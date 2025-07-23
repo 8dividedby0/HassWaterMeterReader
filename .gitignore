@@ -1,0 +1,13 @@
+# python project cache files
+__pycache__/
+
+# Virtual environment
+bin/
+include/
+lib/
+lib64/
+pyvenv.cfg
+
+# temporary images
+*.png
+*.jpg

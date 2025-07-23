@@ -7,12 +7,12 @@
         "topic": "home/water_meter/reading"
     },
     "camera": {
-        "url": "http://192.168.10.10:8080/video",
+        "url": "rtsp://192.168.10.81:8080/h264.sdp",
         "contrast": 2, 
         "brightness": 0
     },
     "digits": {
-        "digit1CropX": [0, 98],
+        "digit1CropX": [0, 100],
         "digit2CropX": [127, 226],
         "digit1CropY": [0, 138],
         "digit2CropY": [0, 138]
